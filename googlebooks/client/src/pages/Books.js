@@ -47,7 +47,7 @@ function Books() {
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
-        synopsis: formObject.synopsis
+        description: formObject.description
       })
         .then(res => loadBooks())
         .catch(err => console.log(err));
@@ -74,8 +74,8 @@ function Books() {
               />
               <TextArea
                 onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="description"
+                placeholder="description (Optional)"
               />
               <FormBtn
                 disabled={!(formObject.author && formObject.title)}
